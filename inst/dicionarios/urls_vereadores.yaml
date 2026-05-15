@@ -1,0 +1,55 @@
+# urls_vereadores.yaml
+# Mapa slug → nome + URL do perfil para download dos requerimentos/moções.
+# Legislatura 2025-2028 — Câmara Municipal de Santos Dumont (MG)
+
+- slug: alyne-do-nascimento
+  nome: Alyne do Nascimento
+  url_perfil: /alyne-do-nascimento/
+
+- slug: altamir-moises-carvalho
+  nome: Altamir Moisés de Carvalho
+  url_perfil: /vereadores/altamir-moises-carvalho/
+
+- slug: dorival-marcos-de-oliveira
+  nome: Dorival Marcos de Oliveira
+  url_perfil: /dorival-marcos-de-oliveira/
+
+- slug: everaldo-barbosa
+  nome: Everaldo Barbosa
+  url_perfil: /everaldo-barbosa/
+
+- slug: flavio-faria
+  nome: Flávio Faria
+  url_perfil: /vereadores/flavio-faria/
+
+- slug: flavia-leticia
+  nome: Flávia Letícia
+  url_perfil: /flavia-leticia/
+
+- slug: luciano-gomes
+  nome: Luciano Gomes
+  url_perfil: /vereadores/luciano-gomes/
+
+- slug: maria-da-enfermagem
+  nome: Maria da Enfermagem
+  url_perfil: /maria-da-enfermagem/
+
+- slug: sandra-cabral
+  nome: Sandra Cabral
+  url_perfil: /vereadores/sandra-cabral/
+
+- slug: jose-abud
+  nome: José Abud
+  url_perfil: /vereadores/jose-abud-2/
+
+- slug: josiane-lopes
+  nome: Josiane Lopes
+  url_perfil: /josiane-lopes/
+
+- slug: valmir-teteco
+  nome: Valmir Teteco
+  url_perfil: /valmir-teteco/
+
+- slug: thailandia-leite
+  nome: Thailândia Leite
+  url_perfil: /thailandia-de-freitas/

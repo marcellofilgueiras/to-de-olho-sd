@@ -1,0 +1,16 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+renv/staging/
+
+# Dados brutos (HTML crus — regenerados a cada coleta)
+data/raw/
+
+# Banco SQLite local (commitado via Actions, não manualmente)
+# data/tdo_sd.sqlite   # descomente se não quiser versionar localmente
+
+# OS
+.DS_Store
+Thumbs.db

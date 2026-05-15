@@ -1,0 +1,34 @@
+name: Coleta semanal Santos Dumont
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'   # segunda-feira 06h BRT = 09h UTC
+  workflow_dispatch:        # permite trigger manual
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-renv@v2
+
+      - name: Executar pipeline
+        run: |
+          Rscript R/01_baixar.R
+          Rscript R/02_consolidar.R
+          Rscript R/03_vereadores.R
+
+      - name: Commit automatico
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots/ data/tdo_sd.sqlite
+          git diff --staged --quiet || git commit -m "Atualizacao $(date -u +%Y-%m-%d)"
+          git push

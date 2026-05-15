@@ -1,0 +1,73 @@
+# temas.yaml
+# Dicionário de classificação temática descritiva — Câmara de Santos Dumont
+# Cada tema tem padrões regex (case-insensitive).
+# Sprint 2 — expandir conforme validação com dados reais.
+
+denominacao_logradouro:
+  - "denomina(r|\\s+a)?\\s+(rua|avenida|pra[cç]a|largo|travessa|alameda|viela|estrada)"
+  - "d[aá]\\s+denomina[cç][aã]o"
+  - "passa(r|\\s+a)\\s+(se\\s+)?chamar"
+
+homenagem:
+  - "mo[cç][aã]o\\s+de\\s+(louvor|pesar|parabeniza|congratula)"
+  - "t[ií]tulo\\s+de\\s+cidad[aã]o"
+  - "homenage(m|ar)"
+  - "congratula[cç][aã]o"
+
+servico_urbano:
+  - "tapa.?buraco"
+  - "capina"
+  - "asfalto|asfaltamento|pavimenta[cç][aã]o"
+  - "ilumina[cç][aã]o\\s+(p[uú]blica|viaria)"
+  - "boca\\s+de\\s+lobo"
+  - "cal[cç]ada|calcamento"
+  - "limpeza\\s+(p[uú]blica|de\\s+(rua|via|bairro))"
+  - "patrolamento|e[sc][cç][aá]ria"
+  - "poda\\s+de\\s+(arvore|[aá]rvore)"
+
+saude:
+  - "sa[uú]de"
+  - "UBS|UPA|CAPS|hospital"
+  - "medic(amento|ina|o)"
+  - "vacina[cç][aã]o"
+  - "agente\\s+de\\s+sa[uú]de"
+
+educacao:
+  - "educa[cç][aã]o"
+  - "escola|colegio|creche|CMEI"
+  - "professor|docente"
+  - "merenda|alimenta[cç][aã]o\\s+escolar"
+
+mobilidade:
+  - "[oô]nibus|transporte\\s+(p[uú]blico|coletivo)"
+  - "ciclovi[aá]|ciclofaixa"
+  - "tr[aâ]nsito|sinaliza[cç][aã]o\\s+(vi[aá]ria|de\\s+tr[aâ]nsito)"
+  - "est[aâ]cionamento"
+
+seguranca:
+  - "seguran[cç]a\\s+(p[uú]blica|urban[ao])"
+  - "policia|guarda\\s+municipal"
+  - "c[aâ]mera\\s+de\\s+(seguran[cç]a|videomonitoramento)"
+
+meio_ambiente:
+  - "meio\\s+ambiente"
+  - "sustentabilidade"
+  - "res[ií]duo|lixo|coleta\\s+seletiva"
+  - "[aá]rea\\s+verde|parque|pra[cç]a.*verde"
+  - "arboriza[cç][aã]o"
+  - "polui[cç][aã]o"
+
+animais:
+  - "animal|animais"
+  - "c[aã]o|c[aã]es|felino|gato"
+  - "maus.?trato"
+  - "castra[cç][aã]o|castrar"
+  - "zoonose"
+
+materia_substantiva:
+  - "disp[oõ]e\\s+sobre"
+  - "institui|cria\\s+(o\\s+)?(programa|fundo|conselho|servi[cç]o)"
+  - "altera\\s+(a\\s+)?(lei|artigo|inciso)"
+  - "revoga"
+  - "or[cç]amento|LOA|LDO|PPA"
+  - "concess[aã]o|permiss[aã]o"
