@@ -50,7 +50,7 @@ if (!file.exists(arquivo_pls)) {
       autor_normalizado = normalizar_nome(autor_raw),
       prop_id           = prop_id(tipo_codigo, numero, ano)
     ) |>
-    select(-autores_lista, -autor_raw_ind)
+    select(-autor_raw_ind)
 
   df_pls <- pls |>
     select(prop_id, numero, ano, tipo_codigo, tipo_nome, pdf_url,
