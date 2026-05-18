@@ -1,14 +1,22 @@
-name: Coleta semanal Santos Dumont
+name: Coleta e publicação semanal
 
 on:
   schedule:
     - cron: '0 9 * * 1'   # segunda-feira 06h BRT = 09h UTC
   workflow_dispatch:        # permite trigger manual
 
+permissions:
+  contents: write           # para commitar o SQLite
+  pages: write              # para publicar no GitHub Pages
+  id-token: write           # necessário para deploy-pages
+
 jobs:
-  coletar:
+  pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - uses: actions/checkout@v4
@@ -19,16 +27,32 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Executar pipeline
+      - name: Coletar dados
         run: |
           Rscript R/01_baixar.R
           Rscript R/02_consolidar.R
           Rscript R/03_vereadores.R
+          Rscript R/04_classificar_tema.R
 
-      - name: Commit automatico
+      - name: Gerar site
+        run: Rscript gerar_site.R
+
+      - name: Commit banco de dados atualizado
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots/ data/tdo_sd.sqlite
-          git diff --staged --quiet || git commit -m "Atualizacao $(date -u +%Y-%m-%d)"
+          git add data/tdo_sd.sqlite
+          git diff --staged --quiet || git commit -m "Dados: $(date -u +%Y-%m-%d)"
           git push
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site para Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
