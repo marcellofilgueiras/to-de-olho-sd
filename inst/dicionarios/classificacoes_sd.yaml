@@ -1,0 +1,197 @@
+# classificacoes_sd.yaml
+# Dicionário de classificação temática — Câmara de Santos Dumont
+# Três seções independentes:
+#   temas_pl        → classifica Projetos de Lei pela ementa
+#   req_urbano      → classifica Requerimentos de melhoria urbana
+#   req_moc         → detecta Requerimentos que são na prática Moções
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1. TEMAS DOS PROJETOS DE LEI
+# ─────────────────────────────────────────────────────────────────────────────
+temas_pl:
+
+  saude:
+    - "sa[uú]de"
+    - "hospital|UBS|UPA|CAPS|pronto.socorro"
+    - "m[eé]dic[oa]|medicamento|rem[eé]dio"
+    - "vacina[cç][aã]o|imuniza[cç][aã]o"
+    - "enfermagem|enfermeiro"
+    - "acidente de trabalho|abril verde|doen[cç]a ocupacional"
+
+  educacao:
+    - "educa[cç][aã]o"
+    - "escola|col[eé]gio|creche|CMEI|ensino"
+    - "professor|docente|pedagogia"
+    - "merenda|alimenta[cç][aã]o escolar"
+
+  meio_ambiente:
+    - "meio ambiente|ambiental"
+    - "res[ií]duo|lixo|coleta seletiva|reciclagem"
+    - "arboriza[cç][aã]o|[aá]rea verde|parque"
+    - "polui[cç][aã]o|sustentabilidade"
+    - "cidade limpa"
+
+  mobilidade:
+    - "[oô]nibus|transporte (p[uú]blico|coletivo)"
+    - "ciclovi[aá]|ciclofaixa"
+    - "tr[aâ]nsito|sinaliza[cç][aã]o vi[aá]ria"
+    - "corrida|maratona|atletismo"
+
+  seguranca:
+    - "seguran[cç]a p[uú]blica"
+    - "pol[ií]cia|guarda municipal"
+    - "c[aâ]mera de seguran[cç]a|videomonitoramento"
+
+  animais:
+    - "animal|animais"
+    - "c[aã]o|c[aã]es|felino|gato|cachorro"
+    - "maus.tratos|bem.estar animal"
+    - "castra[cç][aã]o|zoonose"
+    - "animal comunit[aá]rio|animal em situa[cç][aã]o de rua"
+
+  assistencia_social:
+    - "assist[eê]ncia social|vulnerabilidade"
+    - "CRAS|CREAS|SUAS"
+    - "fam[ií]lia|crian[cç]a|adolescente"
+    - "refugiado|migrante"
+
+  mulher_genero:
+    - "mulher|feminic[ií]dio|feminismo"
+    - "viol[eê]ncia dom[eé]stica|viol[eê]ncia de g[eê]nero"
+    - "empoderamento feminino"
+    - "canal de den[uú]ncia.*mulher|mulher.*den[uú]ncia"
+    - "levante contra o feminic[ií]dio"
+
+  pcd_acessibilidade:
+    - "defici[eê]ncia|PCD|pessoa com defici[eê]ncia"
+    - "acessibilidade|inclus[aã]o"
+    - "autismo|TEA|espectro autista"
+    - "mobilidade reduzida"
+    - "vacina[cç][aã]o domiciliar"
+
+  terceira_idade:
+    - "idoso|terceira idade|melhor idade|s[eê]nior"
+    - "aposentado|pensionista"
+    - "conviv[eê]ncia.*idoso|idoso.*conviv[eê]ncia"
+    - "bem.estar.*idoso|idoso.*bem.estar"
+
+  cultura_lazer:
+    - "cultura|lazer|turismo|esporte"
+    - "festival|festa|carnaval|s[aã]o jo[aã]o"
+    - "calend[aá]rio oficial|data comemorativa|datas comemorativas"
+    - "corrida zumbi|consci[eê]ncia negra|afro"
+    - "catequista|pastoral|religi"
+    - "nossa senhora|festividade"
+
+  homenagem_denominacao:
+    - "denomin(a|ar)\\s+(rua|avenida|pra[cç]a|largo|travessa|estrada)"
+    - "t[ií]tulo de cidad[aã]o"
+    - "dia (municipal|estadual|nacional|mundial) de|semana (municipal|estadual)"
+
+  desenvolvimento_economico:
+    - "desenvolvimento econ[oô]mico|econ[oô]mia local"
+    - "microempreendedor|MEI|micro.*empresa|pequena empresa"
+    - "produtor rural|economia familiar|cooperativa"
+    - "emprego|renda|trabalho"
+    - "programa decola|aux[ií]lio alimenta[cç][aã]o"
+
+  gestao_publica:
+    - "transpar[eê]ncia|portal da transpar[eê]ncia"
+    - "servidor p[uú]blico|cargo|concurso"
+    - "licita[cç][aã]o|contrata[cç][aã]o|preg[aã]o"
+    - "portaria|regulamenta[cç][aã]o|regulamento"
+    - "Lei Org[aâ]nica|regimento"
+    - "poder legislativo|c[aâ]mara municipal"
+
+  quilombola_racial:
+    - "quilombola|quilombo"
+    - "afro.brasileiro|africano"
+    - "igualdade racial"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 2. SUBTIPOS DE REQUERIMENTOS URBANOS
+# Detectados pela ementa; aplicados apenas a REQs
+# ─────────────────────────────────────────────────────────────────────────────
+req_urbano:
+
+  capina_limpeza:
+    - "capina|ro[cç]agem|mato alto|mato baixo"
+    - "limpeza (de |do |da )?(rua|bairro|campo|cemit[eé]rio|c[oô]rrego|CEFEC)"
+    - "poda (de |das? )?(árvore|[aá]rvores|galho)"
+    - "limpeza e.*desobstru[cç][aã]o"
+
+  pavimentacao:
+    - "asfalto|asfaltamento|pavimenta[cç][aã]o|pavimentar"
+    - "tapa.?buracos?|recapeamento|cascalhamento"
+    - "buraco (na|em|do) (rua|via|estrada)"
+    - "reparo.*pista|pista.*reparo"
+    - "estrada rural|estrada vicinal"
+
+  iluminacao:
+    - "ilumina[cç][aã]o p[uú]blica"
+    - "poste (de |d')?energia|poste.*luz"
+    - "l[aâ]mpada|refletor"
+    - "poste.*manutenção|manutenção.*poste"
+
+  drenagem_bueiros:
+    - "bueiro|boca de lobo"
+    - "c[oô]rrego|vala|drenagem|galeria"
+    - "esgoto|saneamento"
+    - "inunda[cç][aã]o|alagamento|enchente"
+    - "COPASA|abastecimento de água"
+    - "muro de arrimo|contenção de encosta"
+
+  calcada_acesso:
+    - "cal[cç]ada|passeio p[uú]blico"
+    - "escada de acesso|rampas? de acesso"
+    - "acessibilidade.*cal[cç]ada|cal[cç]ada.*acessibilidade"
+
+  mobilidade_transito:
+    - "quebra.molas|redutor de velocidade|lombada"
+    - "faixa de pedestre|zebrinha"
+    - "[oô]nibus|transporte coletivo|linha de [oô]nibus|ponto de [oô]nibus"
+    - "sinaliza[cç][aã]o (via|de tr[aâ]nsito|horizontal|vertical)"
+    - "tr[aâ]fego|tr[aâ]nsito"
+    - "moto.*taxi|mototaxi"
+
+  infraestrutura_obras:
+    - "constru[cç][aã]o (de |do |da )?(muro|escada|quadra|cobertura|telhado|ponte)"
+    - "reforma (de |do |da )?(escola|pra[cç]a|campo|creche|cep|CEFEC)"
+    - "micro.ondas|equipamento"
+    - "ponto de [oô]nibus.*melhoria|melhoria.*ponto de [oô]nibus"
+    - "ponte|passarela"
+
+  areas_verdes_pracas:
+    - "pra[cç]a|jardim p[uú]blico|[aá]rea de lazer"
+    - "campo de futebol|quadra esportiva"
+    - "cemit[eé]rio municipal"
+    - "parque|pista de caminhada"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 3. REQUERIMENTOS QUE SÃO MOÇÕES (direcionados ao Plenário)
+# Em Santos Dumont, moções entram como Requerimentos ao Plenário
+# ─────────────────────────────────────────────────────────────────────────────
+req_moc:
+
+  moc_pesar:
+    - "mo[cç][aã]o de pesar"
+    - "familiares (d[aeo] |do Sr\\.|da Sra\\.)"
+    - "encaminha.*familiares"
+    - "falecimento|faleceu|[oó]bito"
+
+  moc_louvor:
+    - "mo[cç][aã]o de louvor"
+    - "homenagear|homenagem"
+    - "louvor.*servi[cç]os prestados"
+
+  moc_repudio:
+    - "mo[cç][aã]o de rep[uú]dio"
+    - "rep[uú]dio"
+
+  moc_parabenizacao:
+    - "mo[cç][aã]o de parabeniza[cç][aã]o"
+    - "parabeniza[cç][aã]o"
+    - "parabenizar"
+
+  audiencia_publica:
+    - "audi[eê]ncia p[uú]blica"
